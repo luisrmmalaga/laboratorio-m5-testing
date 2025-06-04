@@ -1,0 +1,16 @@
+name: CI workflow
+
+on: pull_request
+
+jobs:
+  ci-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
